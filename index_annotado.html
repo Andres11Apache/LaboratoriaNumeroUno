@@ -1,0 +1,76 @@
+<!-- By: Ricardo Andres Apache / Shirly Lorena Sanchez -->
+
+<!doctype html> <!-- Tipo de documento HTML5 -->
+<html lang="es"> <!-- Idioma del documento en español -->
+<head> <!-- Encabezado del documento (metadatos) -->
+  <meta charset="utf-8" /> <!-- Codificación de caracteres UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Adaptación a pantallas móviles -->
+  <title>Lista de Compras - Árbol Binario de Búsqueda (BST)</title> <!-- Título de la pestaña del navegador -->
+  <link rel="stylesheet" href="style.css" /> <!-- Vincula la hoja de estilos -->
+</head> <!-- Cierre de head -->
+<body> <!-- Cuerpo del documento visible -->
+  <header class="app-header"> <!-- Encabezado principal con clase para estilos -->
+    <h1>Lista de Compras Restaurante Don Gustavo</h1> <!-- Título principal (editado por ti) -->
+    <p class="subtitle">porfavor tenga en cuenta lo que vaya a escribir y como lo va a escribir esto es importante para que no surjan errores a la hora de buscar y eliminar</p> <!-- Subtítulo/aviso (editado por ti) -->
+  </header> <!-- Cierre del header -->
+
+  <main class="container"> <!-- Contenedor principal con grid -->
+    <section class="card controls"> <!-- Tarjeta para controles de gestión -->
+      <h2>Gestión de Productos</h2> <!-- Título de sección -->
+
+      <div class="form-grid"> <!-- Grid de campos del formulario -->
+        <div class="field"> <!-- Campo: nombre del producto -->
+          <label for="productName">Producto</label> <!-- Etiqueta del input de producto -->
+          <input id="productName" type="text" placeholder="Ej: Tomates" /> <!-- Input para escribir producto -->
+        </div> <!-- Fin campo producto -->
+
+        <div class="field"> <!-- Campo: prioridad -->
+          <label for="priority">Prioridad (1=Alta, 5=Baja)</label> <!-- Etiqueta de prioridad -->
+          <input id="priority" type="number" min="1" max="5" step="1" value="3" /> <!-- Input numérico para prioridad -->
+        </div> <!-- Fin campo prioridad -->
+
+        <div class="field"> <!-- Campo: modo de orden -->
+          <label for="orderMode">Orden</label> <!-- Etiqueta del selector de orden -->
+          <select id="orderMode"> <!-- Selector para criterio de orden -->
+            <option value="name" selected>Alfabético (Nombre)</option> <!-- Opción para ordenar por nombre -->
+            <option value="priority">Prioridad (1..5)</option> <!-- Opción para ordenar por prioridad -->
+          </select> <!-- Fin select -->
+        </div> <!-- Fin campo modo de orden -->
+      </div> <!-- Fin del grid de formulario -->
+
+      <div class="btn-row"> <!-- Fila de botones -->
+        <button id="btnAdd" class="btn primary">Agregar</button> <!-- Botón para insertar producto -->
+        <button id="btnSearch" class="btn">Buscar</button> <!-- Botón para buscar producto -->
+        <button id="btnDelete" class="btn danger">Eliminar</button> <!-- Botón para eliminar producto -->
+        <span class="spacer"></span> <!-- Separador flexible para empujar el botón siguiente a la derecha -->
+        <button id="btnChangeOrder" class="btn outline">Aplicar modo de orden</button> <!-- Botón para reconstruir BST con nuevo comparador -->
+      </div> <!-- Fin fila de botones -->
+
+      <p id="status" class="status" role="status" aria-live="polite"></p> <!-- Área de mensajes de estado accesible -->
+    </section> <!-- Cierre de sección de controles -->
+
+    <section class="card traversals"> <!-- Tarjeta para recorridos del árbol -->
+      <h2>Recorridos del Árbol</h2> <!-- Título de recorridos -->
+      <div class="btn-row"> <!-- Fila de botones de recorridos -->
+        <button id="btnInOrder" class="btn">Inorden</button> <!-- Botón para recorrido inorden -->
+        <button id="btnPreOrder" class="btn">Preorden</button> <!-- Botón para recorrido preorden -->
+        <button id="btnPostOrder" class="btn">Postorden</button> <!-- Botón para recorrido postorden -->
+      </div> <!-- Fin fila de botones -->
+      <ul id="resultList" class="result-list"></ul> <!-- Lista donde se muestran los resultados de recorridos -->
+    </section> <!-- Cierre de sección recorridos -->
+
+    <section class="card tree-view"> <!-- Tarjeta para vista textual del árbol -->
+      <h2>Vista del Árbol (Texto)</h2> <!-- Título de vista en texto -->
+      <pre id="treeText" class="tree-text"></pre> <!-- Bloque preformateado para imprimir el árbol como texto -->
+    </section> <!-- Cierre de sección vista del árbol -->
+  </main> <!-- Fin del contenido principal -->
+
+  <footer class="app-footer"> <!-- Pie de página -->
+    <p>
+      Hecho con BST en JavaScript. Operaciones: inserción, búsqueda, eliminación y recorridos.
+    </p> <!-- Texto informativo del pie -->
+  </footer> <!-- Cierre del footer -->
+
+  <script src="app.js"></script> <!-- Carga el script principal con la lógica del BST y la app -->
+</body> <!-- Cierre del body -->
+</html> <!-- Cierre del documento HTML -->
